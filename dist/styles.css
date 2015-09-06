@@ -16,6 +16,7 @@ share-button {
   text-transform: uppercase;
 }
 share-button:hover {
+  color: rgba(51,51,51,0.8);
   background: rgba(162,155,170,0.8);
 }
 share-button:before {
