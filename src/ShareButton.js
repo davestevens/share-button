@@ -132,13 +132,14 @@ class ShareButton extends ShareUtils {
    * @param {String} action
    */
   _public(action) {
-    let instances;
+    let shareButton, instances;
 
     if (typeof element === 'undefined')
-      instances =
-        super._objToArray(document.getElementsByTagName('share-button'));
+      shareButton = document.getElementsByTagName('share-button');
     else
-      instances = document.querySelectorAll(element);
+      shareButton = document.querySelectorAll(element);
+
+    instances = super._objToArray(shareButton);
 
     for (let instance of instances) {
       let networks =
@@ -156,13 +157,14 @@ class ShareButton extends ShareUtils {
    * @param {Object} opts
    */
   _setup(element, opts) {
-    let instances;
+    let shareButton, instances;
 
     if (typeof element === 'undefined')
-      instances =
-        super._objToArray(document.getElementsByTagName('share-button'));
+      shareButton = document.getElementsByTagName('share-button');
     else
-      instances = document.querySelectorAll(`share-button${element}`);
+      shareButton = document.querySelectorAll(`share-button${element}`);
+
+    instances = super._objToArray(shareButton);
 
     // Adding user configs to default configs
     this._merge(this.config, opts);
